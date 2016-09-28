@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'fixed_width_dsl'
-  s.version     = '0.1.0'
+  s.version     = '0.1.1'
   s.summary     = 'DSL to build readable format strings'
   s.description = 'A DSL to build and use format/sprintf etc without' \
                   ' readability issues'
