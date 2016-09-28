@@ -18,3 +18,12 @@ DEBUG
 assert_equal sample_format.apply(name: 'roberto', age: 18, amount: 12), <<FORMATTED.chomp
 roberto             180000000012
 FORMATTED
+
+other_sample = FixedWidthDSL.define do
+  field :power, 10, :string
+  field :damage, 5, :integer
+end
+
+assert_equal other_sample.apply(power: 'ray', damage: 15), <<FORMATTED.chomp
+       ray   15
+FORMATTED
