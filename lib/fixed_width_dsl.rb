@@ -22,7 +22,7 @@ module FixedWidthDSL
           end_column,
           field.type,
           field.flags
-        current_column += end_column
+        current_column += field.width
       end
       output
     end
@@ -31,7 +31,7 @@ module FixedWidthDSL
       values = @fields.map do |field|
         attributes.fetch(field.name)
       end
-      format format_string, *values
+      format(format_string, *values)
     end
 
     private
