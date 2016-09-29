@@ -3,6 +3,8 @@
 A DSL to build format strings like `%-20s%010d` used for sprintf/format and
 scanf making it more readable and easy to use.
 
+## Usage
+
 ```ruby
 sample_format = FixedWidthDSL.define do
   field :name, 20, :string, '-'
@@ -24,6 +26,19 @@ sample_format.parse('Juan carlos        00000000012') # =>
 { name: 'Juan carlos',
   amount: 12 }
 ```
+
+## Alternatives
+
+There are some alternative gems to handle fixed width files:
+
+ - [Fixy][1]: It may be bettter suited for complex documents where there are
+   different kind of records in the same file, the syntax can be too verbose.
+
+ - [slither][2]: Also for more complex documents, also adds some validations
+   and clear error messages.
+ 
+  [1]: https://github.com/Chetane/fixy
+  [2]: https://github.com/ryanwood/slither
 
 # License
 
